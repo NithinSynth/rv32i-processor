@@ -1,41 +1,126 @@
-# RISC-V RV32I Processor
+# Design and Implementation of RISC-V RV32I Processor
 
-Academic project: **Design and Implementation of RISC-V RV32I Processor**  
-Academic year: 2026–2027
+<p align="center">
+  <strong>32-bit RISC-V Processor | Verilog HDL | Five-Stage Pipeline</strong>
+</p>
 
-## Overview
-This repository contains Verilog HDL source files, module-level and integration testbenches, Quartus project descriptors, sample instruction-memory files, and selected Quartus report files from the supplied project archive.
+## 1. Project Overview
 
-The source archive contains fetch, decode, execute, control, ALU, register-file, memory, branch, forwarding, and pipeline-related modules. Review the top-level integration and module interfaces before treating this snapshot as a reproducible complete processor build.
+This project focuses on the design and implementation of a 32-bit RISC-V RV32I processor using Verilog HDL.
 
-## Repository layout
-- `RTL/` — Verilog HDL design modules.
-- `Testbenches/` — Verilog testbenches.
-- `Quartus/` — Quartus project descriptors and selected reports.
-- `Simulation/Program/` — sample instruction-memory images.
+The processor follows a five-stage pipelined architecture to execute instructions through separate processing stages. The design includes instruction fetching, instruction decoding, execution, memory access and write-back.
 
-## Tools
-- Intel Quartus Prime Lite 20.1.1 (project files indicate this version)
-- ModelSim Intel FPGA Edition / ModelSim-Altera
-- Verilog HDL
+The project uses Intel Quartus Prime Lite and ModelSim for FPGA development and RTL simulation.
 
-## Getting started
-1. Install a compatible Intel Quartus Prime version and ModelSim.
-2. Open the `.qpf` project in `Quartus/`.
-3. Check the project revision, top-level entity, source-file paths, device selection, and pin assignments. The supplied `.qsf` references files in its original folder layout, so paths may need to be updated after cloning this reorganized repository.
-4. Compile and resolve any source/interface errors.
-5. Run the relevant testbench in ModelSim. Add the exact compile/run commands and verified results here after re-testing this repository snapshot.
+## 2. Processor Architecture
 
-## Verification status
-The uploaded archive includes many testbench files and selected historical reports. Their presence alone does not establish that every test passes or that the integrated design is fully verified. Re-run simulations from a clean checkout and record the results.
+The processor consists of five stages:
 
-The supplied Quartus report set is for the revision named `Program_counter`; do not interpret that report as proof that every processor module or the complete integrated CPU has been successfully implemented, timing-closed, or demonstrated on an FPGA board.
+| Stage | Name | Function |
+|---|---|---|
+| IF | Instruction Fetch | Fetches instructions from instruction memory |
+| ID | Instruction Decode | Decodes instructions and reads registers |
+| EX | Execute | Performs ALU operations and branch calculations |
+| MEM | Memory Access | Performs data memory read/write operations |
+| WB | Write Back | Writes results into the register file |
 
-## Notes
-- Generated Quartus folders (`db/`, `incremental_db/`) and ModelSim work/wave databases are intentionally excluded; they can be regenerated locally.
-- Backup files (`*.bak`) and local ModelSim configuration files are excluded.
-- Add screenshots, board demonstration evidence, and the final project report only after checking that they are current and approved for public sharing.
-- Review all files for personal information, credentials, license restrictions, and institutional requirements before making the repository public.
+## 3. Key Design Components
 
-## Project team
-Add or confirm the approved team-member names and institutional details before publishing.
+- Program Counter
+- Instruction Memory
+- Instruction Decoder
+- Register File
+- Immediate Generator
+- Control Unit
+- ALU and ALU Control
+- Data Memory
+- Pipeline Registers
+- Forwarding Unit
+- Branch Handling Logic
+
+## 4. Pipeline Registers
+
+The design uses four pipeline registers:
+
+- IF/ID
+- ID/EX
+- EX/MEM
+- MEM/WB
+
+These registers transfer instruction data and control signals between consecutive pipeline stages.
+
+## 5. Technologies and Tools
+
+| Technology | Purpose |
+|---|---|
+| Verilog HDL | RTL design |
+| Intel Quartus Prime Lite 20.1.1 | FPGA compilation |
+| ModelSim Intel FPGA Edition 2020.1 | RTL simulation |
+| DE10-Standard | FPGA target platform |
+
+## 6. Repository Structure
+
+```text
+rv32i-processor/
+│
+├── RTL/
+│   └── Verilog design modules
+│
+├── Testbenches/
+│   └── Simulation testbenches
+│
+├── Quartus/
+│   └── FPGA project and reports
+│
+├── Simulation/
+│   └── Program memory files
+│
+├── README.md
+└── .gitignore
+```
+
+*Note: Adjust this structure to match the actual folders in the repository.*
+
+## 7. Simulation and Verification
+
+The project includes individual module testbenches and processor-level simulation files.
+
+Simulation is performed using ModelSim.
+
+The initial simulation transcript records zero errors and two warnings. Instruction memory contents and test coverage should be checked when reproducing the simulation.
+
+## 8. FPGA Implementation
+
+The project includes a DE10-Standard FPGA top-level interface and Quartus project files.
+
+The available Quartus fitter report records successful fitting for the reported design revision. Timing analysis also reports negative setup slack, so timing closure has not yet been demonstrated.
+
+## 9. Future Improvements
+
+- Complete verification of supported RV32I instructions.
+- Improve hazard detection and forwarding.
+- Verify branch and pipeline flush behaviour.
+- Resolve timing violations.
+- Perform complete FPGA hardware validation.
+- Explore the RTL-to-GDSII implementation flow using Cadence tools.
+
+## 10. Project Team
+
+- Nithin Kumar M
+- Parashuram R T
+- Pavan V K
+- Manje Gowda O Y
+
+**Department:** Electronics and Communication Engineering  
+**Institution:** Kalpataru Institute of Technology, Tiptur  
+**Academic Year:** 2026–2027
+
+## 11. Author
+
+**Nithin Kumar M**
+
+GitHub: https://github.com/NithinSynth
+
+---
+
+*Academic project developed as part of the Bachelor of Engineering programme in Electronics and Communication Engineering.*
