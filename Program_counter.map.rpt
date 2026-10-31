@@ -1,0 +1,434 @@
+Analysis & Synthesis report for Program_counter
+Fri Oct 09 15:42:33 2026
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "execute_top:EXECUTE"
+ 10. Port Connectivity Checks: "fetch_decode_stage_top:FETCH_DECODE"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Oct 09 15:42:33 2026       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; Program_counter                             ;
+; Top-level Entity Name           ; rv32i_cpu                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 2                                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC5D6F31C6     ;                    ;
+; Top-level entity name                                                           ; rv32i_cpu          ; Program_counter    ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+---------------------------------------------+-------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                   ; File Name with Absolute Path              ; Library ;
++----------------------------------+-----------------+---------------------------------------------+-------------------------------------------+---------+
+; Program_counter.v                ; yes             ; User Verilog HDL File                       ; C:/riscv_project/Program_counter.v        ;         ;
+; pc_plus4.v                       ; yes             ; User Verilog HDL File                       ; C:/riscv_project/pc_plus4.v               ;         ;
+; instruction_memory.v             ; yes             ; User Verilog HDL File                       ; C:/riscv_project/instruction_memory.v     ;         ;
+; register_file.v                  ; yes             ; User Verilog HDL File                       ; C:/riscv_project/register_file.v          ;         ;
+; immediate_generator.v            ; yes             ; User Verilog HDL File                       ; C:/riscv_project/immediate_generator.v    ;         ;
+; control_unit.v                   ; yes             ; User Verilog HDL File                       ; C:/riscv_project/control_unit.v           ;         ;
+; alu_control.v                    ; yes             ; User Verilog HDL File                       ; C:/riscv_project/alu_control.v            ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File                       ; C:/riscv_project/alu.v                    ;         ;
+; data_memory.v                    ; yes             ; User Verilog HDL File                       ; C:/riscv_project/data_memory.v            ;         ;
+; branch_unit.v                    ; yes             ; User Verilog HDL File                       ; C:/riscv_project/branch_unit.v            ;         ;
+; if_id_register.v                 ; yes             ; User Verilog HDL File                       ; C:/riscv_project/if_id_register.v         ;         ;
+; decode_top.v                     ; yes             ; User Verilog HDL File                       ; C:/riscv_project/decode_top.v             ;         ;
+; execute_top.v                    ; yes             ; User Verilog HDL File                       ; C:/riscv_project/execute_top.v            ;         ;
+; forwarding_unit.v                ; yes             ; User Verilog HDL File                       ; C:/riscv_project/forwarding_unit.v        ;         ;
+; fetch_top.v                      ; yes             ; User Verilog HDL File                       ; C:/riscv_project/fetch_top.v              ;         ;
+; fetch_decode_top.v               ; yes             ; User Verilog HDL File                       ; C:/riscv_project/fetch_decode_top.v       ;         ;
+; fetch_decode_stage_top.v         ; yes             ; User Verilog HDL File                       ; C:/riscv_project/fetch_decode_stage_top.v ;         ;
+; rv32i_cpu.v                      ; yes             ; User Verilog HDL File                       ; C:/riscv_project/rv32i_cpu.v              ;         ;
+; program.hex                      ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; C:/riscv_project/program.hex              ;         ;
++----------------------------------+-----------------+---------------------------------------------+-------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 0     ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 0     ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 0     ;
+;     -- 5 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- <=3 input functions                  ; 0     ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 2     ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 2     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |rv32i_cpu                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 2    ; 0            ; |rv32i_cpu          ; rv32i_cpu   ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "execute_top:EXECUTE"                                                                          ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; mem_write_data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; alu_result     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; alu_zero       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; mem_read_data  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fetch_decode_stage_top:FETCH_DECODE"                                                          ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; pc             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; instruction    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ID_Instruction ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rs1            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rs2            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 2                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri Oct 09 15:42:26 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Risc_V_project -c Program_counter
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file program_counter.v
+    Info (12023): Found entity 1: Program_counter File: C:/riscv_project/Program_counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_program_counter.v
+    Info (12023): Found entity 1: tb_Program_counter File: C:/riscv_project/tb_Program_counter.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file pc_plus4.v
+    Info (12023): Found entity 1: pc_plus4 File: C:/riscv_project/pc_plus4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_pc_plus4.v
+    Info (12023): Found entity 1: tb_pc_plus4 File: C:/riscv_project/tb_pc_plus4.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory.v
+    Info (12023): Found entity 1: instruction_memory File: C:/riscv_project/instruction_memory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_instruction_memory.v
+    Info (12023): Found entity 1: tb_instruction_memory File: C:/riscv_project/tb_instruction_memory.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file register_file.v
+    Info (12023): Found entity 1: register_file File: C:/riscv_project/register_file.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_register_file.v
+    Info (12023): Found entity 1: tb_register_file File: C:/riscv_project/tb_register_file.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file immediate_generator.v
+    Info (12023): Found entity 1: immediate_generator File: C:/riscv_project/immediate_generator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_immediate_generator.v
+    Info (12023): Found entity 1: tb_immediate_generator File: C:/riscv_project/tb_immediate_generator.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.v
+    Info (12023): Found entity 1: control_unit File: C:/riscv_project/control_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_control_unit.v
+    Info (12023): Found entity 1: tb_control_unit File: C:/riscv_project/tb_control_unit.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alu_control.v
+    Info (12023): Found entity 1: alu_control File: C:/riscv_project/alu_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_alu_control.v
+    Info (12023): Found entity 1: tb_alu_control File: C:/riscv_project/tb_alu_control.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu File: C:/riscv_project/alu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_alu.v
+    Info (12023): Found entity 1: tb_alu File: C:/riscv_project/tb_alu.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file data_memory.v
+    Info (12023): Found entity 1: data_memory File: C:/riscv_project/data_memory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_data_memory.v
+    Info (12023): Found entity 1: tb_data_memory File: C:/riscv_project/tb_data_memory.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file branch_unit.v
+    Info (12023): Found entity 1: branch_unit File: C:/riscv_project/branch_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_branch_unit.v
+    Info (12023): Found entity 1: tb_branch_unit File: C:/riscv_project/tb_branch_unit.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file if_id_register.v
+    Info (12023): Found entity 1: if_id_register File: C:/riscv_project/if_id_register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_if_id_register.v
+    Info (12023): Found entity 1: tb_if_id_register File: C:/riscv_project/tb_if_id_register.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file decode_top.v
+    Info (12023): Found entity 1: decode_top File: C:/riscv_project/decode_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_decode_top.v
+    Info (12023): Found entity 1: tb_decode_top File: C:/riscv_project/tb_decode_top.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file execute_top.v
+    Info (12023): Found entity 1: execute_top File: C:/riscv_project/execute_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_execute_top.v
+    Info (12023): Found entity 1: tb_execute_top File: C:/riscv_project/tb_execute_top.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file forwarding_unit.v
+    Info (12023): Found entity 1: forwarding_unit File: C:/riscv_project/forwarding_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_forwarding_unit.v
+    Info (12023): Found entity 1: tb_forwarding_unit File: C:/riscv_project/tb_forwarding_unit.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_decode_forwarding.v
+    Info (12023): Found entity 1: tb_decode_forwarding File: C:/riscv_project/tb_decode_forwarding.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file branch_flush_unit.v
+    Info (12023): Found entity 1: branch_flush_unit File: C:/riscv_project/branch_flush_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_branch_flush_unit.v
+    Info (12023): Found entity 1: tb_branch_flush_unit File: C:/riscv_project/tb_branch_flush_unit.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tb_branch_if_id.v
+    Info (12023): Found entity 1: tb_branch_if_id File: C:/riscv_project/tb_branch_if_id.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file next_pc_unit.v
+    Info (12023): Found entity 1: next_pc_unit File: C:/riscv_project/next_pc_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_next_pc_unit.v
+    Info (12023): Found entity 1: tb_next_pc_unit File: C:/riscv_project/tb_next_pc_unit.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file fetch_top.v
+    Info (12023): Found entity 1: fetch_top File: C:/riscv_project/fetch_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_fetch_top.v
+    Info (12023): Found entity 1: tb_fetch_top File: C:/riscv_project/tb_fetch_top.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file fetch_decode_top.v
+    Info (12023): Found entity 1: fetch_decode_top File: C:/riscv_project/fetch_decode_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_fetch_decode_top.v
+    Info (12023): Found entity 1: tb_fetch_decode_top File: C:/riscv_project/tb_fetch_decode_top.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file fetch_decode_stage_top.v
+    Info (12023): Found entity 1: fetch_decode_stage_top File: C:/riscv_project/fetch_decode_stage_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_fetch_decode_stage_top.v
+    Info (12023): Found entity 1: tb_fetch_decode_stage_top File: C:/riscv_project/tb_fetch_decode_stage_top.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file rv32i_cpu.v
+    Info (12023): Found entity 1: rv32i_cpu File: C:/riscv_project/rv32i_cpu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_rv32i_cpu.v
+    Info (12023): Found entity 1: tb_rv32i_cpu File: C:/riscv_project/tb_rv32i_cpu.v Line: 4
+Info (12127): Elaborating entity "rv32i_cpu" for the top level hierarchy
+Info (12128): Elaborating entity "fetch_decode_stage_top" for hierarchy "fetch_decode_stage_top:FETCH_DECODE" File: C:/riscv_project/rv32i_cpu.v Line: 149
+Info (12128): Elaborating entity "fetch_decode_top" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|fetch_decode_top:FETCH_DECODE" File: C:/riscv_project/fetch_decode_stage_top.v Line: 83
+Info (12128): Elaborating entity "fetch_top" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|fetch_decode_top:FETCH_DECODE|fetch_top:FETCH" File: C:/riscv_project/fetch_decode_top.v Line: 37
+Info (12128): Elaborating entity "Program_counter" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|fetch_decode_top:FETCH_DECODE|fetch_top:FETCH|Program_counter:PC" File: C:/riscv_project/fetch_top.v Line: 25
+Info (12128): Elaborating entity "pc_plus4" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|fetch_decode_top:FETCH_DECODE|fetch_top:FETCH|pc_plus4:PC4" File: C:/riscv_project/fetch_top.v Line: 37
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|fetch_decode_top:FETCH_DECODE|fetch_top:FETCH|instruction_memory:IMEM" File: C:/riscv_project/fetch_top.v Line: 49
+Warning (10850): Verilog HDL warning at instruction_memory.v(9): number of words (6) in memory file does not match the number of elements in the address range [0:255] File: C:/riscv_project/instruction_memory.v Line: 9
+Warning (10030): Net "memory.data_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/riscv_project/instruction_memory.v Line: 6
+Warning (10030): Net "memory.waddr_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/riscv_project/instruction_memory.v Line: 6
+Warning (10030): Net "memory.we_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/riscv_project/instruction_memory.v Line: 6
+Info (12128): Elaborating entity "if_id_register" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|fetch_decode_top:FETCH_DECODE|if_id_register:IF_ID" File: C:/riscv_project/fetch_decode_top.v Line: 56
+Info (12128): Elaborating entity "decode_top" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|decode_top:DECODE" File: C:/riscv_project/fetch_decode_stage_top.v Line: 127
+Info (12128): Elaborating entity "control_unit" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|decode_top:DECODE|control_unit:CU" File: C:/riscv_project/decode_top.v Line: 84
+Info (12128): Elaborating entity "register_file" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|decode_top:DECODE|register_file:RF" File: C:/riscv_project/decode_top.v Line: 108
+Info (12128): Elaborating entity "forwarding_unit" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|decode_top:DECODE|forwarding_unit:FU" File: C:/riscv_project/decode_top.v Line: 130
+Info (12128): Elaborating entity "immediate_generator" for hierarchy "fetch_decode_stage_top:FETCH_DECODE|decode_top:DECODE|immediate_generator:IMM_GEN" File: C:/riscv_project/decode_top.v Line: 143
+Info (12128): Elaborating entity "execute_top" for hierarchy "execute_top:EXECUTE" File: C:/riscv_project/rv32i_cpu.v Line: 193
+Info (12128): Elaborating entity "alu_control" for hierarchy "execute_top:EXECUTE|alu_control:ALU_CTRL" File: C:/riscv_project/execute_top.v Line: 78
+Info (12128): Elaborating entity "alu" for hierarchy "execute_top:EXECUTE|alu:ALU" File: C:/riscv_project/execute_top.v Line: 93
+Info (12128): Elaborating entity "data_memory" for hierarchy "execute_top:EXECUTE|data_memory:DATA_MEM" File: C:/riscv_project/execute_top.v Line: 111
+Info (12128): Elaborating entity "branch_unit" for hierarchy "execute_top:EXECUTE|branch_unit:BRANCH_UNIT" File: C:/riscv_project/execute_top.v Line: 126
+Info (144001): Generated suppressed messages file C:/riscv_project/output_files/Program_counter.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: C:/riscv_project/rv32i_cpu.v Line: 3
+    Warning (15610): No output dependent on input pin "rst_n" File: C:/riscv_project/rv32i_cpu.v Line: 6
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4806 megabytes
+    Info: Processing ended: Fri Oct 09 15:42:33 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:16
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/riscv_project/output_files/Program_counter.map.smsg.
+
+
